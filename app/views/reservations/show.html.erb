@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Remote task:</b>
+  <%= @reservation.remote_task_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @reservation.user_id %>
+</p>
+
+<p>
+  <b>Yelp:</b>
+  <%= @reservation.yelp_id %>
+</p>
+
+<p>
+  <b>Restaurant name:</b>
+  <%= @reservation.restaurant_name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @reservation.city %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @reservation.zip %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @reservation.address %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @reservation.phone %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @reservation.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @reservation.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>
