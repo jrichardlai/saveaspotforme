@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
+gem 'taskrabbit'
+gem 'omniauth-taskrabbit'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,6 +30,7 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
