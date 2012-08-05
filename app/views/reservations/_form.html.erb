@@ -10,47 +10,23 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= f.label :location_name %><br />
+    <%= f.text_field :location_name %>
+  </div>
+  <div class="field">
+    <%= f.label :time_to_call %><br />
+    <%= f.text_field :time_to_call %>
+  </div>
+  <div class="field">w
+    <%= f.label :number_of_people %><br />
+    <%= f.text_field :number_of_people %>
+  </div>
+  <!-- Add the map -->
+  <%= f.hidden_field :yelp_id %>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
 
-  <div class="field">
-    <%= f.label :remote_task_id %><br />
-    <%= f.number_field :remote_task_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :yelp_id %><br />
-    <%= f.text_field :yelp_id %>
-  </div>
-  <div class="field">
-    <%= f.label :restaurant_name %><br />
-    <%= f.text_field :restaurant_name %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br />
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br />
-    <%= f.text_field :longitude %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

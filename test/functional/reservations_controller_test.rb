@@ -18,7 +18,7 @@ class ReservationsControllerTest < ActionController::TestCase
 
   test "should create reservation" do
     assert_difference('Reservation.count') do
-      post :create, reservation: { address: @reservation.address, city: @reservation.city, latitude: @reservation.latitude, longitude: @reservation.longitude, phone: @reservation.phone, remote_task_id: @reservation.remote_task_id, restaurant_name: @reservation.restaurant_name, user_id: @reservation.user_id, yelp_id: @reservation.yelp_id, zip: @reservation.zip }
+      post :create, reservation: { address: @reservation.address, city: @reservation.city, latitude: @reservation.latitude, longitude: @reservation.longitude, phone: @reservation.phone, remote_task_id: @reservation.remote_task_id, location_name: @reservation.location_name, user_id: @reservation.user_id, yelp_id: @reservation.yelp_id, zip: @reservation.zip }
     end
 
     assert_redirected_to reservation_path(assigns(:reservation))
@@ -35,7 +35,7 @@ class ReservationsControllerTest < ActionController::TestCase
   end
 
   test "should update reservation" do
-    put :update, id: @reservation, reservation: { address: @reservation.address, city: @reservation.city, latitude: @reservation.latitude, longitude: @reservation.longitude, phone: @reservation.phone, remote_task_id: @reservation.remote_task_id, restaurant_name: @reservation.restaurant_name, user_id: @reservation.user_id, yelp_id: @reservation.yelp_id, zip: @reservation.zip }
+    put :update, id: @reservation, reservation: { address: @reservation.address, city: @reservation.city, latitude: @reservation.latitude, longitude: @reservation.longitude, phone: @reservation.phone, remote_task_id: @reservation.remote_task_id, location_name: @reservation.location_name, user_id: @reservation.user_id, yelp_id: @reservation.yelp_id, zip: @reservation.zip }
     assert_redirected_to reservation_path(assigns(:reservation))
   end
 

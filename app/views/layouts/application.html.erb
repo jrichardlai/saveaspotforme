@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Saveaspotforme</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Save a spot for me!</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Norican" %>
+  <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:900" %>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" %>
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.9&libraries=places,geometry&sensor=false" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_tag do %>
+    SaveASpotForMe.GMAPS_STATIC_API_KEY = <%= raw ENV['GMAPS_STATIC_API_KEY'].to_json %>;
+    SaveASpotForMe.currentUser = <%= raw current_user.try(:display_name).to_json %>;
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body class="<%= params[:controller] %> <%= params[:action] %>">
+
+  <header>
+    <%= link_to root_path do %>
+      <h1 class="logo"><span class="name">Save me</span> a spot</h1>
+    <% end %>
+    <h2 class="slogan">$20 for someone to reserve for you!</h2>
+
+    <div id="account-links">
+      <p class="logged-in" style="display: none;">
+        Logged in as <span class="user-name"></span>
+        <%= link_to "Log out", logout_path, :class => 'logout button' %>
+      </p>
+      <p class="logged-out" style="display: none;">
+        <%= link_to "Log in with TaskRabbit", 'auth/taskrabbit', :class => 'login button' %>
+      </p>
+    </div>
+  </header>
+
+  <section id="main">
+    <%= render 'layouts/flash_messages' %>
+    <%= yield %>
+  </section>
+
+  <footer>
+    <div id="powered-by">
+      <span>Powered By:</span>
+      <%= image_tag 'tr_logo.png', :alt => 'TaskRabbit', :title => 'TaskRabbit' %>
+    </div>
+  </footer>
 
 </body>
 </html>

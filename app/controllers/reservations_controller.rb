@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_filter :require_login, :only => [:edit, :update, :create, :destroy]
+
   # GET /reservations
   # GET /reservations.json
   def index
@@ -34,13 +36,13 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/1/edit
   def edit
-    @reservation = Reservation.find(params[:id])
+    @reservation = current_user.reservations.find(params[:id])
   end
 
   # POST /reservations
   # POST /reservations.json
   def create
-    @reservation = Reservation.new(params[:reservation])
+    @reservation = current_user.reservations.build(params[:reservation])
 
     respond_to do |format|
       if @reservation.save

@@ -17,12 +17,12 @@
     <th></th>
   </tr>
 
-<% @reservations.each do |reservation| %>
+<% @reservations.to_a.each do |reservation| %>
   <tr>
     <td><%= reservation.remote_task_id %></td>
     <td><%= reservation.user_id %></td>
     <td><%= reservation.yelp_id %></td>
-    <td><%= reservation.restaurant_name %></td>
+    <td><%= reservation.location_name %></td>
     <td><%= reservation.city %></td>
     <td><%= reservation.zip %></td>
     <td><%= reservation.address %></td>
