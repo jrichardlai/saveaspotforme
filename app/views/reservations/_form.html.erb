@@ -1,4 +1,6 @@
 <%= form_for(@reservation) do |f| %>
+  <section class="where">
+
   <% if @reservation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
@@ -15,19 +17,21 @@
     <%= f.text_field :location_name %>
   </div>
   <div class="field">
-    <%= f.label :time_to_call %><br />
-    <%= f.text_field :time_to_call %>
+    <%= f.label :reserve_at %><br />
+    <%= f.text_field :reserve_at %>
   </div>
   <div class="field">w
-    <%= f.label :number_of_people %><br />
-    <%= f.text_field :number_of_people %>
+    <%= f.label :party_size %><br />
+    <%= f.text_field :party_size %>
   </div>
   <!-- Add the map -->
   <%= f.hidden_field :yelp_id %>
   <%= f.hidden_field :latitude %>
   <%= f.hidden_field :longitude %>
+  </section>
 
-  <div class="actions">
+  <section class="submit">
     <%= f.submit %>
-  </div>
+  </section>
+
 <% end %>

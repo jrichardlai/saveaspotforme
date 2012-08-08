@@ -8,6 +8,9 @@
   <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" %>
   <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.9&libraries=places,geometry&sensor=false" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "//oauth.googlecode.com/svn/code/javascript/oauth.js" %>
+  <%= javascript_include_tag "//oauth.googlecode.com/svn/code/javascript/sha1.js" %>
+
   <%= javascript_tag do %>
     SaveASpotForMe.GMAPS_STATIC_API_KEY = <%= raw ENV['GMAPS_STATIC_API_KEY'].to_json %>;
     SaveASpotForMe.currentUser = <%= raw current_user.try(:display_name).to_json %>;
@@ -36,6 +39,10 @@
 
   <section id="main">
     <%= render 'layouts/flash_messages' %>
+    <section class="where">
+      <input type="text" name="search" id="search" />
+    </section>
+
     <%= yield %>
   </section>
 
