@@ -7,7 +7,7 @@ class User
   has_many :reservations
 
   def self.find_or_create_from_auth_hash(auth_hash)
-    user              = find_or_initialize_by_remote_id(auth_hash.uid)
+    user              = User.find_or_initialize_by(remote_user_id: auth_hash.uid)
     user.display_name = auth_hash.extra.raw_info.display_name
     user.oauth_token  = auth_hash.credentials.token
     user.save

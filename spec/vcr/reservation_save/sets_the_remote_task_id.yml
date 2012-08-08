@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://taskrabbitdev.com/api/v1/tasks?
+    body:
+      encoding: US-ASCII
+      string: task[description]=I%20am%20looking%20for%20a%20TaskRabbit%20to%20go%20to%20Test%20to%20make%20a%20reservation%20for%20Sunday%2C%2012%20December%20at%203%3A20am.%0A%20The%20party%20is%20of%203.%0A%20Please%20call%20me%20when%20you%20arrive%20at%20the%20restaurant%20to%20tell%20me%20when%20I%20would%20have%20to%20come.%0A%0A%20Thank%20you.%0A%0A%20Task%20Posted%20on%20saveaspotfor.me&task[private_description]=&task[private_runner]=false&task[virtual]=false&task[name]=Make%20a%20reservation%20to%20Test%20for%20Sunday%2C%2012%20December%20at%203%3A20am&task[named_price]=20&task[other_locations_attributes][][name]=Test&task[other_locations_attributes][][address]=some%20address&task[other_locations_attributes][][city]=Boston&task[other_locations_attributes][][state]=MA&task[other_locations_attributes][][zip]=12345&task[other_locations_attributes][][lat]=123&task[other_locations_attributes][][lng]=456
+    headers:
+      x-client-application:
+      - nxkpvRovsUlI6LdRXxeY1EUU8Kr5NaXeL4G5eFpU
+      authorization:
+      - OAuth PfOd9PE3p74F8rJObiD7NnnCKiYHqxLWrioOjdsz
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.0.11
+      date:
+      - Wed, 08 Aug 2012 04:41:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      connection:
+      - close
+      status:
+      - 200 OK
+      cache-control:
+      - private, max-age=0, must-revalidate
+      x-runtime:
+      - '1494'
+      set-cookie:
+      - current_geo=1053; path=/; expires=Mon, 08-Oct-2012 04:41:38 GMT
+      etag:
+      - ! '"5afdbbbd5930e7011f5ac92b94a5894d"'
+      content-length:
+      - '1936'
+    body:
+      encoding: US-ASCII
+      string: ! '{"complete_by_time":1344596400,"state_label":"posted","cost_in_cents":0,"private_runner":false,"named_price":20,"runners":{"items":[]},"description_properties":[{"title":"Description","key":"description","value":"I
+        am looking for a TaskRabbit to go to Test to make a reservation for Sunday,
+        12 December at 3:20am.\n The party is of 3.\n Please call me when you arrive
+        at the restaurant to tell me when I would have to come.\n\n Thank you.\n\n
+        Task Posted on saveaspotfor.me"},{"title":"Private description","key":"private_description","value":""},{"title":"If
+        unassigned, Task will expire on","key":"assign_by_time","value":1344510000},{"title":"Task
+        should be completed by","key":"complete_by_time","value":1344596400}],"state_changed_at":1344400899,"assignment_type":"auto","runner_fee":0,"city":{"lng":-87.8250634547,"links":{"get":"/api/v1/cities/159"},"name":"Green
+        Bay","id":1131,"lat":44.6988088091},"assign_by_time":1344510000,"location_visits":{"items":[{"complete":"some
+        address, Boston, MA 12345","zip":"12345","address":"some address","approximate_radius":0,"partial":"some
+        address, Boston, MA 12345","lng":456.0,"city":"Boston","id":1,"name":"Test","location_id":30,"lat":123.0,"state":"MA"}]},"links":{"delete":"/api/v1/tasks/3","put":"/api/v1/tasks/3","authenticated":"https://s-app1.taskrabbit.com/go/a7086fe1a0c684c592569a05c2b9f31dc057cbb91a98ee7e01f07aa65ae1559f50a73a0a41a781a3379b0e5e55c97364d0d7","get":"/api/v1/tasks/3","html":"http://s-app1.taskrabbit.com/tasks/make-a-reservation-to-test-for-sunday-12-december-at-320am"},"id":3,"name":"Make
+        a reservation to Test for Sunday, 12 December at 3:20am","description":"I
+        am looking for a TaskRabbit to go to Test to make a reservation for Sunday,
+        12 December at 3:20am.\n The party is of 3.\n Please call me when you arrive
+        at the restaurant to tell me when I would have to come.\n\n Thank you.\n\n
+        Task Posted on saveaspotfor.me","charge_price":20,"state":"opened"}'
+    http_version: '1.1'
+  recorded_at: Wed, 08 Aug 2012 04:41:40 GMT
+recorded_with: VCR 2.2.4
