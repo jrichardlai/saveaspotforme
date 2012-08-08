@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  time:
+    formats:
+      sentence: "%A, %-d %B at %l:%M%p"
