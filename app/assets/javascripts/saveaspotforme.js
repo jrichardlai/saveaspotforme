@@ -95,10 +95,14 @@ SaveASpotForMe = {
       });
 
       // update lat/lng and full address fields
-      var lat = place.geometry.location.lat(),
-          lng = place.geometry.location.lng();
+      var lat   = place.geometry.location.lat(),
+          lng   = place.geometry.location.lng(),
+          phone = place.international_phone_number,
+          name  = place.name;
       el.find('#reservation_latitude').val(lat);
       el.find('#reservation_longitude').val(lng);
+      el.find('#reservation_location_name').val(name);
+      el.find('#reservation_phone').val(phone);
     });
     
     
