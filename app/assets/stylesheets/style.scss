@@ -8,8 +8,8 @@ section.what {
 }
 
 
-section.where {
-  #search {
+form section {
+  input[type=text] {
     width: 658px;
     height: 30px;
     margin: 15px 0 20px;

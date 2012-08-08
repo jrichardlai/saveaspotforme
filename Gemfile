@@ -22,6 +22,7 @@ group :assets do
   gem 'jquery-ui-rails'
 end
 
+gem 'yelp'
 gem 'jquery-rails'
 
 group :development do

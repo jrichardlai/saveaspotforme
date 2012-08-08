@@ -6,3 +6,9 @@ en:
   time:
     formats:
       sentence: "%A, %-d %B at %l:%M%p"
+  helpers:
+    label:
+      reservation:
+        reserve_at: "Time of the reservation"
+        location_name: "Restaurant"
+        party_size: "Number of people"
