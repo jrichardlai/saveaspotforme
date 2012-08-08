@@ -8,7 +8,6 @@ class Reservation
   field :party_size, type: Integer
   field :remote_task_id, type: Integer
   field :user_id, type: Integer
-  field :yelp_id, type: String
   field :reserve_at, type: DateTime
   field :location_name, type: String
   field :city, type: String
@@ -19,10 +18,9 @@ class Reservation
   field :latitude, type: String
   field :longitude, type: String
 
-  attr_accessible :yelp_id, :reserve_at, :latitude, :longitude, 
-                  :location_name, :party_size
+  attr_accessible :reserve_at, :location_name, :party_size, :address, :city, :zip, :state, :latitude, :longitude, :phone
 
-  validates_presence_of :user_id, :party_size, :location_name, :reserve_at
+  validates_presence_of :user_id, :party_size, :location_name, :reserve_at, :address, :city, :zip, :state
   belongs_to :user
 
   before_save :create_remote_task, :on => :create

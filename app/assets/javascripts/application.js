@@ -14,4 +14,3 @@
 //= require underscore-min
 //= require jquery.cookie
 //= require jquery.ui.all
-//= require search
