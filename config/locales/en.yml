@@ -9,6 +9,6 @@ en:
   helpers:
     label:
       reservation:
+        full_location_name: "Restaurant"
         reserve_at: "Time of the reservation"
-        location_name: "Restaurant"
         party_size: "Number of people"

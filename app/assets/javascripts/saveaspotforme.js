@@ -53,7 +53,7 @@ SaveASpotForMe = {
       google.maps.geometry.spherical.computeOffset(center, radius, 45,      this.EARTH_RADIUS)  // calculate SW corner
     );
   
-    var input = $('#search')[0];
+    var input = el.find('#reservation_full_location_name')[0];
     var map_image_initial_params = "&center=" + center.toUrlValue() + "&zoom=" + zoom;
     var map_image = $('<img src="' + map_image_base_url + map_image_initial_params + '" class="location_map">');
   

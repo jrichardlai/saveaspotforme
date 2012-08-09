@@ -1,21 +1,18 @@
 <%= form_for(@reservation) do |f| %>
   <% if @reservation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
-
-      <ul>
-      <% @reservation.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      Please verify the following informations:
     </div>
   <% end %>
 
   <section class="fields">
+    <%= f.label :full_location_name %><br />
+    <%= f.text_field :full_location_name %>
     <%= f.label :reserve_at %><br />
     <%= f.text_field :reserve_at %>
     <%= f.label :party_size %><br />
-    <%= f.text_field :party_size %>
+    <%= f.select :party_size, (1..20) %>
+    <br />
     <%= f.hidden_field :location_name %>
     <%= f.hidden_field :address %>
     <%= f.hidden_field :city %>

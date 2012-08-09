@@ -8,7 +8,7 @@ class Reservation
   field :party_size, type: Integer
   field :remote_task_id, type: Integer
   field :user_id, type: Integer
-  field :reserve_at, type: DateTime
+  field :reserve_at, type: String
   field :location_name, type: String
   field :city, type: String
   field :zip, type: String
@@ -17,8 +17,9 @@ class Reservation
   field :phone, type: String
   field :latitude, type: String
   field :longitude, type: String
+  field :full_location_name, type: String
 
-  attr_accessible :reserve_at, :location_name, :party_size, :address, :city, :zip, :state, :latitude, :longitude, :phone
+  attr_accessible :reserve_at, :location_name, :party_size, :address, :city, :zip, :state, :latitude, :longitude, :phone, :full_location_name
 
   validates_presence_of :user_id, :party_size, :location_name, :reserve_at, :address, :city, :zip, :state
   belongs_to :user
@@ -63,12 +64,19 @@ class Reservation
         }
       ]
     )
-    return false unless remote_task.save
+
+    return false unless sucessfully_saved_remote(remote_task)
     self.remote_task_id = remote_task.id
-    true
   end
 
   def formatted_reservation_time
     I18n.l(reserve_at, :format => :sentence).gsub(/\s+/, ' ')
+  end
+
+  def sucessfully_saved_remote(remote_task)
+    remote_task.save
+  rescue Taskrabbit::Error => e
+    Rails.logger.error(e)
+    false
   end
 end
